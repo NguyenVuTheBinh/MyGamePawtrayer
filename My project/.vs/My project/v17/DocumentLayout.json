@@ -1,0 +1,254 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\intern\\My project\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\colorsetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\colorsetup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\playersetcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playersetcolor.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\connecttoserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\connecttoserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|d:\\intern\\my project\\assets\\scripts\\photonscripts\\waitingroomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\photonscripts\\waitingroomcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\photonscripts\\endgamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\photonscripts\\endgamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\photonscripts\\ingamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\photonscripts\\ingamecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\interactive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\interactive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\pregamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pregamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\roomitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\roomitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\lobbymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\lobbymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\minigamenumberorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\minigamenumberorder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\body.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\body.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|D:\\intern\\My project\\assets\\scripts\\layersorting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{32C3BDE6-E125-3128-82C1-25D0441455A3}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\layersorting.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EndGameController.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\PhotonScripts\\EndGameController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PhotonScripts\\EndGameController.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\PhotonScripts\\EndGameController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PhotonScripts\\EndGameController.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-04T13:23:39.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Interactive.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\Interactive.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Interactive.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\Interactive.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Interactive.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-03T12:46:44.458Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "InGameController.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\PhotonScripts\\InGameController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PhotonScripts\\InGameController.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\PhotonScripts\\InGameController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PhotonScripts\\InGameController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T15:36:28.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "WaitingRoomController.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\PhotonScripts\\WaitingRoomController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PhotonScripts\\WaitingRoomController.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\PhotonScripts\\WaitingRoomController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PhotonScripts\\WaitingRoomController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBIAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T12:19:52.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ColorSetUp.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\ColorSetUp.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ColorSetUp.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\ColorSetUp.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ColorSetUp.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwA8AAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T10:46:08.219Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "PreGameManager.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\PreGameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PreGameManager.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\PreGameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PreGameManager.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-31T13:27:43.642Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RoomItem.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\RoomItem.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\RoomItem.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\RoomItem.cs",
+              "RelativeToolTip": "Assets\\Scripts\\RoomItem.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAiwBMAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T11:34:24.1Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LobbyManager.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\LobbyManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LobbyManager.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\LobbyManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LobbyManager.cs",
+              "ViewState": "AgIAADkAAAAAAAAAAAAuwEQAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T07:43:03.561Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ConnectToServer.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\ConnectToServer.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\ConnectToServer.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\ConnectToServer.cs",
+              "RelativeToolTip": "Assets\\Scripts\\ConnectToServer.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAA8AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-30T06:32:18.52Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PlayerController.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerController.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\PlayerController.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerController.cs",
+              "ViewState": "AgIAAMcAAAAAAAAAAAAmwFcAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-21T13:01:50.213Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PlayerSetColor.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\PlayerSetColor.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerSetColor.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\PlayerSetColor.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerSetColor.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-22T12:58:24.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Body.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\Body.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Body.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\Body.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Body.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAQwBcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-24T10:58:58.181Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "LayerSorting.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\LayerSorting.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LayerSorting.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\LayerSorting.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LayerSorting.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAAgwAsAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-23T01:07:29.291Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "MiniGameNumberOrder.cs",
+              "DocumentMoniker": "D:\\intern\\My project\\Assets\\Scripts\\MiniGameNumberOrder.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\MiniGameNumberOrder.cs",
+              "ToolTip": "D:\\intern\\My project\\Assets\\Scripts\\MiniGameNumberOrder.cs",
+              "RelativeToolTip": "Assets\\Scripts\\MiniGameNumberOrder.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAwwCgAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-28T09:30:37.654Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

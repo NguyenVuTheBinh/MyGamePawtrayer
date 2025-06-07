@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1045 &1
+EditorBuildSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scene/1_ConnectToServer.unity
+    guid: 596ec6c4e48946f4dad2e7673a6acbf1
+  - enabled: 1
+    path: Assets/Scene/2_Lobby.unity
+    guid: a175115cae7787748b8901d6bb691fdc
+  - enabled: 1
+    path: Assets/Scene/3_PreGame.unity
+    guid: f5b039a008f435140868670cf8b89531
+  - enabled: 1
+    path: Assets/Scene/4_InGameScene.unity
+    guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scene/5_EndGame.unity
+    guid: e4ff06acbc5b71548b61360620eb8e7b
+  m_configObjects:
+    com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
+  m_UseUCBPForAssetBundles: 0
