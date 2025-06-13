@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour, IPunObservable
     [SerializeField] float speed;
 
     //To set character color
-    static Color dogColor;
+    private Color dogColor = Color.white;
     SpriteRenderer dogSprite;
     PlayerSetColor initialColor;
 
@@ -58,6 +58,25 @@ public class PlayerController : MonoBehaviour, IPunObservable
 
     private void Awake()
     {
+        myPov = GetComponent<PhotonView>();
+        if (myPov.IsMine)
+        {
+            localPlayer = this;
+        }
+        dogSprite = gameObject.GetComponent<SpriteRenderer>();
+        var owner = myPov.Owner;
+        if (owner.CustomProperties.TryGetValue("colorR", out object rObj) &&
+            owner.CustomProperties.TryGetValue("colorG", out object gObj) &&
+            owner.CustomProperties.TryGetValue("colorB", out object bObj) &&
+            owner.CustomProperties.TryGetValue("colorA", out object aObj))
+        {
+            dogColor = new Color32((byte)rObj, (byte)gObj, (byte)bObj, (byte)aObj);
+        }
+        else
+        {
+            dogColor = Color.white;
+        }
+        dogSprite.color = dogColor;
         BONK.performed += BonkTargets;
         reportBody.performed += ReportBody;
         interaction.performed += Interaction;
@@ -80,25 +99,10 @@ public class PlayerController : MonoBehaviour, IPunObservable
     }
     private void Start()
     {
-        myPov = GetComponent<PhotonView>();
-        if (myPov.IsMine) 
-        {
-            localPlayer = this;
-        }
+        dogSprite.color = dogColor;
         allBodies = new List<Transform>();
         myAvatar = gameObject.GetComponent<Transform>();
         targets = new List<PlayerController>();
-        dogSprite = gameObject.GetComponent<SpriteRenderer>();
-        if (initialColor.allColors == null)
-        {
-            Debug.Log("you're right");
-            return;
-        }
-        else
-        {
-            dogColor = initialColor.allColors[Random.Range(0, 8)];
-        }
-        dogSprite.color = dogColor;
         vision = gameObject.GetComponent<Light2D>();
         myCam = transform.GetChild(2).GetComponent<Camera>();
         bodiesFound = new List<Transform>();
@@ -149,19 +153,12 @@ public class PlayerController : MonoBehaviour, IPunObservable
     //Set and sync color
     public void SetColor(Color newColor)
     {
-        if (!myPov)
-            return;
-        if (dogSprite != null){
-            myPov.RPC("RPC_SetColor", RpcTarget.All, newColor);
+        Debug.Log("I'm called");
+        if (myPov){
+            dogColor = newColor;
+            dogSprite.color = dogColor;
         }
     }
-    [PunRPC]
-    void RPC_SetColor(Color newColor)
-    {
-        dogColor = newColor;
-        dogSprite.color = dogColor;
-    }
-
 
     //The part of doing kill method 
     public void SetRole(bool newRole)
@@ -307,13 +304,30 @@ public class PlayerController : MonoBehaviour, IPunObservable
     {
         if (stream.IsWriting)
         {
+            //show direction
             stream.SendNext(direction);
+            //set role
             stream.SendNext(isCat);
+            //set color
+            stream.SendNext(dogColor.r);
+            stream.SendNext(dogColor.g);
+            stream.SendNext(dogColor.b);
+            stream.SendNext(dogColor.a);
         }
         else
         {
+            //receive direction
             direction = (float)stream.ReceiveNext();
+            //receive role
             isCat = (bool)stream.ReceiveNext();
+            //receive color
+            float r = (float)stream.ReceiveNext();
+            float g = (float)stream.ReceiveNext();
+            float b = (float)stream.ReceiveNext();
+            float a = (float)stream.ReceiveNext();
+            dogColor = new Color(r, g, b, a);
+            if (dogSprite != null)
+                dogSprite.color = dogColor;
         }
     }
     public void BecomeCat(int catNumber)

@@ -1,6 +1,5 @@
 using UnityEngine;
 using Photon.Pun;
-using UnityEngine.UI;
 
 public class InGameController : MonoBehaviour
 {
@@ -13,10 +12,12 @@ public class InGameController : MonoBehaviour
     int whichPlayerIsCat;
     void Start()
     {
-        PhotonNetwork.AutomaticallySyncScene = true;
-        Vector2 randomPosition = new Vector2(Random.Range(MinX, MaxX), Random.Range(MinY, MaxY));
-        PhotonNetwork.Instantiate(playerPrefab.name, randomPosition, Quaternion.identity);
-        myPov = GetComponent<PhotonView>();
+        if (PhotonNetwork.LocalPlayer.TagObject == null)
+        {
+            Vector2 randomPosition = new Vector2(Random.Range(MinX, MaxX), Random.Range(MinY, MaxY));
+            GameObject playerObj = PhotonNetwork.Instantiate("Test_Player", randomPosition, Quaternion.identity);
+            myPov = GetComponent<PhotonView>();
+        }
         if (PhotonNetwork.IsMasterClient)
         {
             PickCat();

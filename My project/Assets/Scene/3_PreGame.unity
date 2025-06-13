@@ -200,19 +200,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 121457780}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1007301918}
-        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 6
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &121457780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,19 +320,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 291782075}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1007301918}
-        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 8
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &291782075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -543,19 +519,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 365820788}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1007301918}
-        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 5
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &365820788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1002,19 +966,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 628399504}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1007301918}
-        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &628399504
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1221,19 +1173,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 751402810}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1007301918}
-        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 1
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &751402810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1353,19 +1293,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 760223705}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1007301918}
-        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &760223705
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1485,19 +1413,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 991333673}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1007301918}
-        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &991333673
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1646,16 +1562,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e96581947f47fb1438723aa8619da737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  allColors:
-  - {r: 0.80392164, g: 0.10196079, b: 0.10196079, a: 1}
-  - {r: 0.75294125, g: 0.18039216, b: 0.6901961, a: 1}
-  - {r: 0.14117648, g: 0.18039216, b: 0.6745098, a: 1}
-  - {r: 0.227451, g: 0.73333335, b: 0.73333335, a: 1}
-  - {r: 0.043137256, g: 0.6431373, b: 0, a: 1}
-  - {r: 0.90196085, g: 0.60784316, b: 0.13725491, a: 1}
-  - {r: 0.18039216, g: 0.18039216, b: 0.18431373, a: 1}
-  - {r: 0.7058824, g: 0.7058824, b: 0.7058824, a: 1}
-  - {r: 0.9607844, g: 0.37254903, b: 0, a: 1}
+  buttonStatusColor:
+    m_NormalColor: {r: 0, g: 0, b: 0, a: 0}
+    m_HighlightedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_PressedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_SelectedColor: {r: 0, g: 0, b: 0, a: 0}
+    m_DisabledColor: {r: 0, g: 0, b: 0, a: 0}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0
+  availableColors: []
+  colorButtons:
+  - {fileID: 760223704}
+  - {fileID: 751402809}
+  - {fileID: 1445265651}
+  - {fileID: 991333672}
+  - {fileID: 628399503}
+  - {fileID: 365820787}
+  - {fileID: 121457779}
+  - {fileID: 1660915839}
+  - {fileID: 291782074}
+  fadedColorFactor: {r: 0, g: 0, b: 0, a: 0.6}
   colorPanel: {fileID: 1001099957}
 --- !u!114 &1007301919
 MonoBehaviour:
@@ -2218,19 +2144,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1445265652}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1007301918}
-        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 2
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1445265652
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2474,19 +2388,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1660915840}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1007301918}
-        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
-        m_MethodName: ChangeColor
-        m_Mode: 3
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 7
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1660915840
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3138,7 +3040,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: bleh
+  m_Text: 'Room name:'
 --- !u!222 &2127673136
 CanvasRenderer:
   m_ObjectHideFlags: 0

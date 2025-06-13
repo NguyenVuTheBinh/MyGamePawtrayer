@@ -34,6 +34,11 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     }
     public override void OnRoomListUpdate(List<RoomInfo> roomList)
     {
+        Debug.Log("OnRoomListUpdate called, room count: " + roomList.Count);
+        foreach (var room in roomList)
+        {
+            Debug.Log($"Room: {room.Name} | IsOpen: {room.IsOpen} | IsVisible: {room.IsVisible} | Removed: {room.RemovedFromList}");
+        }
         if (Time.time >= nextUpdateTime)
         {
             UpdateRoomList(roomList);
@@ -49,6 +54,8 @@ public class LobbyManager : MonoBehaviourPunCallbacks
         roomItemsList.Clear();
         foreach (RoomInfo room in list)
         {
+            if (!room.IsOpen || !room.IsVisible || room.RemovedFromList)
+                continue;
             RoomItem newRoom = Instantiate(roomItemPrefab, contentObject);
             newRoom.SetRoomName(room.Name);
             roomItemsList.Add(newRoom);
