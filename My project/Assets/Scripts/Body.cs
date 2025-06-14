@@ -1,13 +1,20 @@
+using Photon.Pun;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Body : MonoBehaviour
+public class Body : MonoBehaviourPun
 {
     [SerializeField] SpriteRenderer spriteRenderer;
-
-    public void SetColor(Color dogColor)
+    public PhotonView myPov;
+    private void Start()
     {
-        spriteRenderer.color = dogColor;
+        myPov = gameObject.GetComponent<PhotonView>();
+    }
+    [PunRPC]
+    public void RPC_SetColorDeadBody(float r, float g, float b, float a)
+    {
+        spriteRenderer.color = new Color(r, g, b, 1f);
+        Debug.Log($"Set dead body color to: {r}, {g}, {b}, {a}");
     }
     private void OnEnable()
     {

@@ -16,7 +16,7 @@ public class PlayerSetColor : MonoBehaviourPunCallbacks
     Color color5 = new Color32(10, 171, 1, 255);
     Color color6 = new Color32(240, 163, 32, 255);
     Color color7 = new Color32(50, 50, 50, 255);
-    Color color8 = new Color32(188, 188, 188, 255);
+    Color color8 = new Color32(200, 200, 200, 255);
     Color color9 = new Color32(255, 100, 0, 255);
     public ColorBlock buttonStatusColor;
 

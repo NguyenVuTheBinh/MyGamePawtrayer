@@ -45,6 +45,7 @@ MonoBehaviour:
   - RPC_SyncCat
   - RPC_DieByBONK
   - RPC_Report
+  - RPC_SetColorDeadBody
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

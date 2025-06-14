@@ -231,11 +231,28 @@ public class PlayerController : MonoBehaviour, IPunObservable
     {
         if (!myPov.IsMine)
             return;
-        Body tempBody = PhotonNetwork.Instantiate(deadBody.name, transform.position + new Vector3(1f, -2f, direction), transform.rotation).GetComponent<Body>();
+        object[] instData = new object[] {
+            (float)dogColor.r / 255f,
+            (float)dogColor.g / 255f,
+            (float)dogColor.b / 255f,
+            (float)dogColor.a / 255f
+        };
+        Body tempBody = PhotonNetwork.Instantiate(
+            "DedDog", 
+            transform.position + new Vector3(1f, -2f, direction),
+            transform.rotation,
+            0,
+            instData
+        ).GetComponent<Body>();
 
         isDead = true;
         animator.SetBool("isDead", isDead);
-        tempBody.SetColor(dogSprite.color);
+        tempBody.myPov.RPC("RPC_SetColorDeadBody", RpcTarget.All,
+            (float)dogColor.r,
+            (float)dogColor.g,
+            (float)dogColor.b,
+            (float)dogColor.a
+        );
     }
 
     void SearchBody()

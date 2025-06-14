@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 260872155880853403}
+  myPov: {fileID: 8106971953233752989}
 --- !u!114 &8106971953233752989
 MonoBehaviour:
   m_ObjectHideFlags: 0
