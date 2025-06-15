@@ -539,6 +539,7 @@ MonoBehaviour:
       m_Action: Report Body
       m_Flags: 0
     m_Flags: 0
+  isDead: 0
   deadBody: {fileID: 5685266032960674198, guid: 7bae1717a7743174599039e42683c45b, type: 3}
   ignoreForBody:
     serializedVersion: 2

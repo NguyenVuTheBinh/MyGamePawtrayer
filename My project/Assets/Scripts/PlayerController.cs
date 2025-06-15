@@ -31,7 +31,8 @@ public class PlayerController : MonoBehaviour, IPunObservable
 
     List<PlayerController> targets;
     [SerializeField] InputAction reportBody;
-    bool isDead;
+    public bool isDead = false;
+    Follow_player followCamera;
 
     //lighting
     //[SerializeField] FieldOfView fov;
@@ -108,6 +109,11 @@ public class PlayerController : MonoBehaviour, IPunObservable
         bodiesFound = new List<Transform>();
         vision.enabled = true;
         interactiveObject = GameObject.FindWithTag("InteractiveObject").GetComponent<Interactive>();
+        followCamera = FindAnyObjectByType<Follow_player>();
+        if (followCamera != null)
+        {
+            followCamera.UpdateCullingMask(isDead);
+        }
         if (!myPov.IsMine)
         {
             myCam.gameObject.SetActive(false);
@@ -173,7 +179,7 @@ public class PlayerController : MonoBehaviour, IPunObservable
             if (this.isCat)
             {
                 PlayerController tempTarget = other.GetComponent<PlayerController>();
-                if (tempTarget.isCat)
+                if (tempTarget.isCat | tempTarget.isDead)
                     return;
                 else
                 {
@@ -244,9 +250,12 @@ public class PlayerController : MonoBehaviour, IPunObservable
             0,
             instData
         ).GetComponent<Body>();
+        PlayerController bonkedTarget = GetComponent<PlayerController>();
+        bonkedTarget.isDead = true;
+        followCamera.UpdateCullingMask(isDead);
+        bonkedTarget.myPov.RPC("RPC_SetDeadLayer", RpcTarget.All);
 
-        isDead = true;
-        animator.SetBool("isDead", isDead);
+        animator.SetBool("isDead", true);
         tempBody.myPov.RPC("RPC_SetColorDeadBody", RpcTarget.All,
             (float)dogColor.r,
             (float)dogColor.g,
@@ -255,6 +264,23 @@ public class PlayerController : MonoBehaviour, IPunObservable
         );
     }
 
+    [PunRPC]
+    void RPC_SetDeadLayer()
+    {
+        SetLayerRecursive(gameObject, LayerMask.NameToLayer("DeadPlayerLayer"));
+    }
+    void SetLayerRecursive(GameObject obj, int newLayer)
+    {
+        if (obj == null) 
+            return;
+        obj.layer = newLayer;
+        foreach (Transform child in obj.transform)
+        {
+            SetLayerRecursive(child.gameObject, newLayer);
+        }
+    }
+
+    //for report
     void SearchBody()
     {
         if (!myPov.IsMine)
@@ -325,6 +351,8 @@ public class PlayerController : MonoBehaviour, IPunObservable
             stream.SendNext(direction);
             //set role
             stream.SendNext(isCat);
+            //set status 
+            stream.SendNext(isDead);
             //set color
             stream.SendNext(dogColor.r);
             stream.SendNext(dogColor.g);
@@ -337,6 +365,8 @@ public class PlayerController : MonoBehaviour, IPunObservable
             direction = (float)stream.ReceiveNext();
             //receive role
             isCat = (bool)stream.ReceiveNext();
+            //receive status
+            isDead = (bool)stream.ReceiveNext();
             //receive color
             float r = (float)stream.ReceiveNext();
             float g = (float)stream.ReceiveNext();

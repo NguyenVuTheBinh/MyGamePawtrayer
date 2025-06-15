@@ -20,7 +20,7 @@ TagManager:
   - AnotherPlayerLayer
   - Fog
   - InteractiveObject
-  - 
+  - DeadPlayerLayer
   - 
   - 
   - 
