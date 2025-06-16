@@ -543,7 +543,8 @@ MonoBehaviour:
   deadBody: {fileID: 5685266032960674198, guid: 7bae1717a7743174599039e42683c45b, type: 3}
   ignoreForBody:
     serializedVersion: 2
-    m_Bits: 768
+    m_Bits: 4864
+  meetingPanel: {fileID: 0}
   mouse:
     m_Name: Mouse
     m_Type: 0
@@ -581,6 +582,7 @@ MonoBehaviour:
   interactLayer:
     serializedVersion: 2
     m_Bits: 2048
+  myPov: {fileID: 4512813656918621308}
 --- !u!95 &1179803639897977944
 Animator:
   serializedVersion: 7

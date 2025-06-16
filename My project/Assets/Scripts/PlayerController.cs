@@ -3,6 +3,7 @@ using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using UnityEngine.Rendering.Universal;
 using Photon.Pun;
+using Photon.Pun.Demo.PunBasics;
 
 public class PlayerController : MonoBehaviour, IPunObservable
 {
@@ -43,6 +44,9 @@ public class PlayerController : MonoBehaviour, IPunObservable
     public static List<Transform> allBodies;
     List<Transform> bodiesFound;
     [SerializeField] private LayerMask ignoreForBody;
+    public MeetingPanel meetingPanel;
+    private int myVote = -1;
+    bool hasVoted;
 
     //Interact object
     [SerializeField] InputAction mouse;
@@ -51,7 +55,7 @@ public class PlayerController : MonoBehaviour, IPunObservable
     [SerializeField] InputAction interaction;
     [SerializeField] LayerMask interactLayer;
 
-    PhotonView myPov;
+    public PhotonView myPov;
 
 
     //debug
@@ -250,6 +254,9 @@ public class PlayerController : MonoBehaviour, IPunObservable
             0,
             instData
         ).GetComponent<Body>();
+        PhotonView bodyView = tempBody.GetComponent<PhotonView>();
+        if (!bodyView.IsMine || PhotonNetwork.LocalPlayer.ActorNumber != PhotonNetwork.MasterClient.ActorNumber)
+            bodyView.TransferOwnership(PhotonNetwork.MasterClient.ActorNumber);
         PlayerController bonkedTarget = GetComponent<PlayerController>();
         bonkedTarget.isDead = true;
         followCamera.UpdateCullingMask(isDead);
@@ -306,21 +313,67 @@ public class PlayerController : MonoBehaviour, IPunObservable
     {
         if (!myPov.IsMine)
             return;
-        if (bodiesFound == null)
+        if (bodiesFound == null || bodiesFound.Count == 0)
             return;
-        myPov.RPC("RPC_Report", RpcTarget.All);
+        Transform tempBody = bodiesFound[bodiesFound.Count - 1];
+        PhotonView bodyView = tempBody.GetComponent<PhotonView>();
+        myPov.RPC("RPC_ReportToMaster", RpcTarget.MasterClient, bodyView.ViewID);
+        Debug.Log("report in Player Controller");
+        bodiesFound.Clear();
+        allBodies.Clear();
+        CallMeeting();
     }
     [PunRPC]
-    void RPC_Report()
+    void RPC_ReportToMaster(int bodyViewID)
     {
-        if (bodiesFound.Count > 0)
+        if (!PhotonNetwork.IsMasterClient)
+            return;
+
+        PhotonView bodyView = PhotonView.Find(bodyViewID);
+        if (bodyView != null)
         {
-            Transform tempBody = bodiesFound[bodiesFound.Count - 1];
-            bodiesFound.Remove(tempBody);
-            tempBody.GetComponent<Body>().Report();
+            PhotonNetwork.Destroy(bodyView.gameObject);
         }
     }
 
+    //meeting and voting
+    public void CallMeeting()
+    {
+        if (myPov.IsMine)
+        {
+            InGameController.Instance.myPov.RPC("RPC_Meeting", RpcTarget.All);
+        }
+    }
+    public void OnPlayerVote(int votedPlayerId)
+    {
+        if (hasVoted)
+        {
+            Debug.LogWarning("You have already voted!");
+            return;
+        }
+        myVote = votedPlayerId;
+        hasVoted = true;
+        
+        meetingPanel.DisableVoting();
+        if (myPov != null)
+            myPov.RPC("RPC_SubmitVote", RpcTarget.MasterClient, votedPlayerId, PhotonNetwork.LocalPlayer.ActorNumber);
+        else
+            Debug.LogError("PhotonView reference is missing!");
+        Debug.Log($"Player {PhotonNetwork.LocalPlayer.ActorNumber} voted for {votedPlayerId}");
+    }
+    [PunRPC]
+    void RPC_DieByVote()
+    {
+        if (!myPov.IsMine)
+            return;
+        PlayerController votedTarget = GetComponent<PlayerController>();
+        votedTarget.isDead = true;
+        followCamera.UpdateCullingMask(isDead);
+        votedTarget.myPov.RPC("RPC_SetDeadLayer", RpcTarget.All);
+        animator.SetBool("isDead", true);
+    }
+
+    //do nothing currently
     private void Interaction(InputAction.CallbackContext obj)
     {
         //if (obj.phase == InputActionPhase.Performed)
@@ -342,7 +395,8 @@ public class PlayerController : MonoBehaviour, IPunObservable
         //    }
         //}
     }
-
+    
+    //sync data stream
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting)

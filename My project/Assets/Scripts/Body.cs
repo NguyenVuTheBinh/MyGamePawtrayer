@@ -25,9 +25,9 @@ public class Body : MonoBehaviourPun
     }
     public void Report()
     {
-        Debug.Log("report");        
-        foreach (var body in PlayerController.allBodies)        
-            Destroy(body.gameObject);
+        Debug.Log("report");
+        foreach (var body in PlayerController.allBodies)
+                PhotonNetwork.Destroy(body.gameObject);
         PlayerController.allBodies.Clear();
     }
 }

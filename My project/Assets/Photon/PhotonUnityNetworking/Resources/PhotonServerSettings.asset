@@ -47,6 +47,12 @@ MonoBehaviour:
   - RPC_Report
   - RPC_SetColorDeadBody
   - RPC_SetDeadLayer
+  - RPC_ReportToMaster
+  - RPC_Meeting
+  - RPC_DieByVote
+  - RPC_ExecutePlayer
+  - RPC_NoExecution
+  - RPC_SubmitVote
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
