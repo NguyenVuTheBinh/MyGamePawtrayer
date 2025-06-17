@@ -44,7 +44,6 @@ public class PlayerController : MonoBehaviour, IPunObservable
     public static List<Transform> allBodies;
     List<Transform> bodiesFound;
     [SerializeField] private LayerMask ignoreForBody;
-    public MeetingPanel meetingPanel;
     private int myVote = -1;
     bool hasVoted;
 
@@ -86,7 +85,7 @@ public class PlayerController : MonoBehaviour, IPunObservable
         reportBody.performed += ReportBody;
         interaction.performed += Interaction;
     }
-    private void OnEnable()
+    public void EnableInputActions()
     {
         movement.Enable();
         BONK.Enable();
@@ -94,13 +93,22 @@ public class PlayerController : MonoBehaviour, IPunObservable
         mouse.Enable();
         interaction.Enable();
     }
-    private void OnDisable()
+    public void DisableInputActions()
     {
         movement.Disable();
         BONK.Disable();
         reportBody.Disable();
         mouse.Disable();
         interaction.Disable();
+    }
+    private void OnEnable()
+    {
+        EnableInputActions();
+    }
+
+    private void OnDisable()
+    {
+        DisableInputActions();
     }
     private void Start()
     {
@@ -319,9 +327,14 @@ public class PlayerController : MonoBehaviour, IPunObservable
         PhotonView bodyView = tempBody.GetComponent<PhotonView>();
         myPov.RPC("RPC_ReportToMaster", RpcTarget.MasterClient, bodyView.ViewID);
         Debug.Log("report in Player Controller");
+        myPov.RPC("RPC_ClearBodies", RpcTarget.All);
+        CallMeeting();
+    }
+    [PunRPC]
+    void RPC_ClearBodies()
+    {
         bodiesFound.Clear();
         allBodies.Clear();
-        CallMeeting();
     }
     [PunRPC]
     void RPC_ReportToMaster(int bodyViewID)
@@ -352,14 +365,19 @@ public class PlayerController : MonoBehaviour, IPunObservable
             return;
         }
         myVote = votedPlayerId;
-        hasVoted = true;
-        
-        meetingPanel.DisableVoting();
         if (myPov != null)
-            myPov.RPC("RPC_SubmitVote", RpcTarget.MasterClient, votedPlayerId, PhotonNetwork.LocalPlayer.ActorNumber);
+            InGameController.Instance.myPov.RPC("RPC_SubmitVote", RpcTarget.MasterClient, votedPlayerId, PhotonNetwork.LocalPlayer.ActorNumber);
         else
             Debug.LogError("PhotonView reference is missing!");
         Debug.Log($"Player {PhotonNetwork.LocalPlayer.ActorNumber} voted for {votedPlayerId}");
+        hasVoted = true;
+
+    }
+    [PunRPC]
+    public void RPC_ResetVote()
+    {
+        hasVoted = false;
+        myVote = -1;
     }
     [PunRPC]
     void RPC_DieByVote()

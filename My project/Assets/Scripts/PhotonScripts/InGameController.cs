@@ -18,7 +18,7 @@ public class InGameController : MonoBehaviour
     //role
     int whichPlayerIsCat;
     //just button
-    public Button catWinButton;
+    public GameObject catWinButton;
     //for meeting
     public MeetingPanel meetingPanel;
     public Dictionary<int, GameObject> playerObjects = new Dictionary<int, GameObject>();
@@ -40,7 +40,7 @@ public class InGameController : MonoBehaviour
         if (PhotonNetwork.IsMasterClient)
         {
             PickCat();
-            catWinButton.enabled = true;
+            catWinButton.SetActive(true);
         }
     }
     void PickCat()
@@ -80,6 +80,8 @@ public class InGameController : MonoBehaviour
         var players = InGameController.Instance.GetCurrentPlayers();
         var allControllers = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
         var myPlayerController = allControllers.FirstOrDefault(p => p.myPov.IsMine);
+        myPlayerController.myPov.RPC("RPC_ResetVote", RpcTarget.All);
+        myPlayerController.DisableInputActions();
         meetingPanel.Show(players, (id) => myPlayerController.OnPlayerVote(id));
     }
 
@@ -176,9 +178,11 @@ public class InGameController : MonoBehaviour
             }
         }
 
-        // Hide meeting panel, resume gameplay, etc.
-        // meetingPanel.Hide();
-        // ResumeGame();
+        // Hide meeting panel, resume gameplay,
+        myPov.RPC("RPC_CloseMeetingPanel", RpcTarget.All);
+        var allControllers = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
+        var myPlayerController = allControllers.FirstOrDefault(p => p.myPov.IsMine);
+        myPlayerController.EnableInputActions();
     }
 
     [PunRPC]
@@ -187,8 +191,10 @@ public class InGameController : MonoBehaviour
         Debug.Log("No one executed due to tie!");
 
         // Hide meeting panel, resume gameplay, etc.
-        // meetingPanel.Hide();
-        // ResumeGame();
+        myPov.RPC("RPC_CloseMeetingPanel", RpcTarget.All);
+        var allControllers = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
+        var myPlayerController = allControllers.FirstOrDefault(p => p.myPov.IsMine);
+        myPlayerController.EnableInputActions();
     }
 
     public void OnClickCatWin()
@@ -196,5 +202,9 @@ public class InGameController : MonoBehaviour
         PhotonNetwork.LoadLevel("5_EndGame");
     }
 
-
+    [PunRPC]
+    void RPC_CloseMeetingPanel()
+    {
+        meetingPanel.Hide();
+    }
 }

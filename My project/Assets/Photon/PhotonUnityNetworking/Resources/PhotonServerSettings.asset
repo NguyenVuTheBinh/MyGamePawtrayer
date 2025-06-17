@@ -53,6 +53,9 @@ MonoBehaviour:
   - RPC_ExecutePlayer
   - RPC_NoExecution
   - RPC_SubmitVote
+  - RPC_CloseMeetingPanel
+  - RPC_ClearBodies
+  - RPC_ResetVote
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

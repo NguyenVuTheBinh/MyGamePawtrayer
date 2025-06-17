@@ -544,7 +544,6 @@ MonoBehaviour:
   ignoreForBody:
     serializedVersion: 2
     m_Bits: 4864
-  meetingPanel: {fileID: 0}
   mouse:
     m_Name: Mouse
     m_Type: 0
