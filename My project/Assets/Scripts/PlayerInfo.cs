@@ -5,5 +5,6 @@ public class PlayerInfo
 {
     public int playerId;
     public string playerName;
-    public Sprite dogSprite;
+    public Color dogColor;
+    public bool isDead;
 }

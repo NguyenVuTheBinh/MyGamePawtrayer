@@ -67,7 +67,9 @@ public class InGameController : MonoBehaviour
             GameObject playerObj;
             if (playerObjects.TryGetValue(photonPlayer.ActorNumber, out playerObj))
             {
-                info.dogSprite = playerObj.GetComponent<SpriteRenderer>().sprite;
+                SpriteRenderer sr = playerObj.GetComponent<SpriteRenderer>();
+                info.dogColor = sr.color;
+                info.isDead = playerObj.GetComponent<PlayerController>().isDead;
             }
             players.Add(info);
         }

@@ -16,7 +16,6 @@ public class WaitingRoomController : MonoBehaviour
     {
         myPov = GetComponent<PhotonView>();
         timer = timeToStart;
-        PhotonNetwork.AutomaticallySyncScene = true;
     }
     private void Update()
     {
@@ -53,6 +52,8 @@ public class WaitingRoomController : MonoBehaviour
     [PunRPC]
     void RPC_Play()
     {
+        PhotonNetwork.AutomaticallySyncScene = true;
+
         readyToStart = !readyToStart;
     }
 }

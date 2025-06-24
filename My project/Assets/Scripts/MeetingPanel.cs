@@ -20,10 +20,13 @@ public class MeetingPanel : MonoBehaviour
         {
             GameObject btnObj = Instantiate(playerButtonPrefab, buttonContainer);
             PlayerItem playerItem = btnObj.GetComponent<PlayerItem>();
-            playerItem.Setup(player.playerName, player.dogSprite, player.playerId);
-
+            playerItem.Setup(player.playerName, player.dogColor, player.isDead, player.playerId);
+            
             btnObj.GetComponent<Button>().onClick.AddListener(() => {
+                if (player.isDead)
+                    btnObj.GetComponent<Button>().interactable = false;
                 onVote?.Invoke(player.playerId); 
+
             });
         }
     }

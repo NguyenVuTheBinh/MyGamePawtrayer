@@ -18,13 +18,13 @@ public class PlayerController : MonoBehaviour, IPunObservable
     float direction = 1;
     //To move
     [SerializeField] InputAction movement;
+    Rigidbody2D myRb;
     Vector3 movementInput;
     [SerializeField] float speed;
 
     //To set character color
     private Color dogColor = Color.white;
     SpriteRenderer dogSprite;
-    PlayerSetColor initialColor;
 
     //To related role
     [SerializeField] bool isCat;
@@ -117,6 +117,7 @@ public class PlayerController : MonoBehaviour, IPunObservable
         myAvatar = gameObject.GetComponent<Transform>();
         targets = new List<PlayerController>();
         vision = gameObject.GetComponent<Light2D>();
+        myRb = gameObject.GetComponent<Rigidbody2D>();
         myCam = transform.GetChild(2).GetComponent<Camera>();
         bodiesFound = new List<Transform>();
         vision.enabled = true;
@@ -141,6 +142,7 @@ public class PlayerController : MonoBehaviour, IPunObservable
             return;
 
         //fov.GetOrigin(transform.position);
+
         movementInput = movement.ReadValue<Vector3>();
 
         if (movementInput.x != 0)
@@ -165,7 +167,9 @@ public class PlayerController : MonoBehaviour, IPunObservable
     {
         if (!myPov.IsMine)
             return;
-        this.transform.Translate(movementInput * speed * Time.deltaTime);
+        Vector2 movementInput = movement.ReadValue<Vector3>();
+        Vector3 targetPosition = myRb.position + movementInput * speed * Time.fixedDeltaTime;
+        myRb.MovePosition(targetPosition);
     }
 
     //Set and sync color
