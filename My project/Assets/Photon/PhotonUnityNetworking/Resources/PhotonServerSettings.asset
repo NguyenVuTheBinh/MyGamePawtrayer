@@ -56,6 +56,7 @@ MonoBehaviour:
   - RPC_CloseMeetingPanel
   - RPC_ClearBodies
   - RPC_ResetVote
+  - RPC_ReceiveChatMessage
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

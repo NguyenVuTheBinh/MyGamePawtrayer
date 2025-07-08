@@ -183,11 +183,6 @@ public class PlayerController : MonoBehaviour, IPunObservable
     }
 
     //The part of doing kill method 
-    public void SetRole(bool newRole)
-    {
-        isCat = newRole;
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -330,7 +325,6 @@ public class PlayerController : MonoBehaviour, IPunObservable
         Transform tempBody = bodiesFound[bodiesFound.Count - 1];
         PhotonView bodyView = tempBody.GetComponent<PhotonView>();
         myPov.RPC("RPC_ReportToMaster", RpcTarget.MasterClient, bodyView.ViewID);
-        Debug.Log("report in Player Controller");
         myPov.RPC("RPC_ClearBodies", RpcTarget.All);
         CallMeeting();
     }
