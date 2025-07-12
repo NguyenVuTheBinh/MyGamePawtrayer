@@ -3,6 +3,7 @@ using Photon.Pun;
 using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -46,6 +47,7 @@ public class PlayerSetColor : MonoBehaviourPunCallbacks
             AssignRandomColor();
         }
     }
+
 
     void AssignRandomColor()
     {
@@ -142,13 +144,17 @@ public class PlayerSetColor : MonoBehaviourPunCallbacks
                 img.color = Color.Lerp(availableColors[i], fadedColorFactor, 0.6f); // faded
         }
     }
-
-    public override void OnLeftRoom()
+    public void OnClickLeaveRoom()
     {
-        // Release color when player leaves
+        // Release color before player leaves
         if (myColorIndex != -1)
             ReleaseColor(myColorIndex);
         myColorIndex = -1;
+        PhotonNetwork.LeaveRoom();
+    }
+    public override void OnLeftRoom()
+    {
+        SceneManager.LoadScene("2_Lobby");
     }
 
     public override void OnPlayerLeftRoom(Player otherPlayer)

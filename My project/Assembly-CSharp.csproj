@@ -70,7 +70,6 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\FieldOfView.cs" />
     <Compile Include="Assets\Photon\PhotonRealtime\Demos\DemoLoadBalancing\ConnectAndJoinRandomLb.cs" />
-    <Compile Include="Assets\Scripts\PhotonScripts\InGameManager.cs" />
     <Compile Include="Assets\Scripts\MiniGameNumberOrder.cs" />
     <Compile Include="Assets\Scripts\PhotonScripts\EndGameController.cs" />
     <Compile Include="Assets\Scripts\ChatInfo.cs" />
@@ -86,7 +85,6 @@
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
-    <Compile Include="Assets\Scripts\PhotonScripts\PreGameManager.cs" />
     <Compile Include="Assets\Scripts\ChatItem.cs" />
     <Compile Include="Assets\Scripts\PhotonScripts\InGameController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\OnStartDelete.cs" />

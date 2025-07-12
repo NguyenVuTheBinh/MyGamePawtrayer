@@ -744,6 +744,7 @@ MonoBehaviour:
   startButton: {fileID: 1750029730}
   countDown: {fileID: 1261388043}
   nextLevel: 3
+  roomName: {fileID: 0}
 --- !u!114 &422895572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -958,8 +959,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1469936664}
-        m_TargetAssemblyTypeName: PreGameManager, Assembly-CSharp
+      - m_Target: {fileID: 1007301918}
+        m_TargetAssemblyTypeName: PlayerSetColor, Assembly-CSharp
         m_MethodName: OnClickLeaveRoom
         m_Mode: 1
         m_Arguments:

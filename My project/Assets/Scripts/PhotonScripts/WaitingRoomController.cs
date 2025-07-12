@@ -11,9 +11,12 @@ public class WaitingRoomController : MonoBehaviour
     [SerializeField] GameObject startButton;
     [SerializeField] Text countDown;
     [SerializeField] int nextLevel;
+    public Text roomName;
+
 
     private void Start()
     {
+        roomName.text = "Room name:" + PhotonNetwork.CurrentRoom.Name;
         myPov = GetComponent<PhotonView>();
         timer = timeToStart;
     }
