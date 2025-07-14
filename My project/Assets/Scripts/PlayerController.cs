@@ -81,6 +81,15 @@ public class PlayerController : MonoBehaviour, IPunObservable
             dogColor = Color.white;
         }
         dogSprite.color = dogColor;
+        int actorNum = myPov.Owner.ActorNumber;
+        if (FindFirstObjectByType<ChatController>() != null)
+        {
+            ChatController.Instance.playerObjects[actorNum] = this.gameObject;
+        }
+        if (FindFirstObjectByType<InGameController>() != null)
+        {
+            InGameController.Instance.playerObjects[actorNum] = this.gameObject;
+        }
         BONK.performed += BonkTargets;
         reportBody.performed += ReportBody;
         interaction.performed += Interaction;

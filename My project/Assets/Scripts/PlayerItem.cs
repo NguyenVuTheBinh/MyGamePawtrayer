@@ -19,8 +19,8 @@ public class PlayerItem : MonoBehaviour
             playerImage.color = dogColor;
             playerImage.preserveAspect = true;
         }
-
         if (outlineImage != null)
             outlineImage.preserveAspect = true;
+
     }
 }

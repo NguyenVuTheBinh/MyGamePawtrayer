@@ -343,6 +343,8 @@ MonoBehaviour:
   senderNameText: {fileID: 4389219943226729135}
   messageText: {fileID: 966762786515982399}
   timeText: {fileID: 7792569990870389342}
+  playerImage: {fileID: 9203684369868131607}
+  bubbleChat: {fileID: 5125764215146848799}
 --- !u!1 &6228817443014060230
 GameObject:
   m_ObjectHideFlags: 0

@@ -60,7 +60,6 @@ public class InGameController : MonoBehaviour
         var players = new List<PlayerInfo>();
         foreach (var photonPlayer in PhotonNetwork.PlayerList)
         {
-            // Build your PlayerInfo from CustomProperties or another source
             PlayerInfo info = new PlayerInfo();
             info.playerId = photonPlayer.ActorNumber;
             info.playerName = photonPlayer.NickName;
@@ -87,53 +86,47 @@ public class InGameController : MonoBehaviour
         meetingPanel.Show(players, (id) => myPlayerController.OnPlayerVote(id));
     }
 
-    // Called via RPC from clients when they vote
     [PunRPC]
     public void RPC_SubmitVote(int votedPlayerId, int voterActorNumber)
     {
-        // Only handle on MasterClient
         if (!PhotonNetwork.IsMasterClient)
             return;
-
-        // Add or update vote
         votes[voterActorNumber] = votedPlayerId;
+        //Optional notify UI of vote status here
 
-        // Optional: notify UI of vote status here
-
-        // Check if all alive players have voted
+        //Condition to end vote, currently all player voted
         if (votes.Count >= GetAlivePlayerCount())
         {
-            TallyVotesAndExecute();
+            CountVotesAndExecute();
             ClearVotes();
         }
     }
 
     private int GetAlivePlayerCount()
     {
-        // You should customize this to only count players who are alive and can vote.
-        // For simplicity, counting all players in the room:
+        //customize this to only count players who are alive and can vote.
+        //for testing, counting all players in the room:
         return PhotonNetwork.PlayerList.Length;
     }
 
-    private void TallyVotesAndExecute()
+    private void CountVotesAndExecute()
     {
-        // Tally the votes: count occurrences for each votedPlayerId
-        Dictionary<int, int> tally = new Dictionary<int, int>();
+        Dictionary<int, int> countVote = new Dictionary<int, int>();
 
         foreach (var vote in votes.Values)
         {
-            if (tally.ContainsKey(vote))
-                tally[vote]++;
+            if (countVote.ContainsKey(vote))
+                countVote[vote]++;
             else
-                tally[vote] = 1;
+                countVote[vote] = 1;
         }
 
-        // Find the playerId with the highest votes
+        //find the playerId with the highest votes
         int maxVotes = 0;
         int executedPlayerId = -1;
         bool tie = false;
 
-        foreach (var entry in tally)
+        foreach (var entry in countVote)
         {
             if (entry.Value > maxVotes)
             {
@@ -149,12 +142,11 @@ public class InGameController : MonoBehaviour
 
         if (!tie && executedPlayerId != -1)
         {
-            // Execute the player with the most votes
+            //execute the player with the most votes
             myPov.RPC("RPC_ExecutePlayer", RpcTarget.All, executedPlayerId);
         }
         else
         {
-            // Handle tie: no one is executed
             myPov.RPC("RPC_NoExecution", RpcTarget.All);
         }
     }
@@ -167,10 +159,8 @@ public class InGameController : MonoBehaviour
     [PunRPC]
     public void RPC_ExecutePlayer(int executedPlayerId)
     {
-        // Handle execution (kick, mark as dead, etc.)
+        //executed
         Debug.Log($"Player {executedPlayerId} is executed!");
-
-        // Example: Find the GameObject and mark as dead
         if (playerObjects.TryGetValue(executedPlayerId, out GameObject playerObj))
         {
             var controller = playerObj.GetComponent<PlayerController>();
@@ -180,7 +170,7 @@ public class InGameController : MonoBehaviour
             }
         }
 
-        // Hide meeting panel, resume gameplay,
+        //hide meeting panel, resume gameplay,
         myPov.RPC("RPC_CloseMeetingPanel", RpcTarget.All);
         var allControllers = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
         var myPlayerController = allControllers.FirstOrDefault(p => p.myPov.IsMine);
@@ -190,9 +180,8 @@ public class InGameController : MonoBehaviour
     [PunRPC]
     public void RPC_NoExecution()
     {
+        //no executed
         Debug.Log("No one executed due to tie!");
-
-        // Hide meeting panel, resume gameplay, etc.
         myPov.RPC("RPC_CloseMeetingPanel", RpcTarget.All);
         var allControllers = FindObjectsByType<PlayerController>(FindObjectsSortMode.None);
         var myPlayerController = allControllers.FirstOrDefault(p => p.myPov.IsMine);
