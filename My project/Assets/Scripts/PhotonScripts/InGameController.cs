@@ -21,9 +21,10 @@ public class InGameController : MonoBehaviour
     public GameObject catWinButton;
     //for meeting
     public MeetingPanel meetingPanel;
-    public Dictionary<int, GameObject> playerObjects = new Dictionary<int, GameObject>();
     public static InGameController Instance { get; private set; }
+    public Dictionary<int, GameObject> playerObjects = new Dictionary<int, GameObject>();
     private Dictionary<int, int> votes = new Dictionary<int, int>();
+    public Dictionary<int, bool> deadPlayer = new Dictionary<int, bool>();
     void Awake()
     {
         Instance = this;
@@ -104,9 +105,19 @@ public class InGameController : MonoBehaviour
 
     private int GetAlivePlayerCount()
     {
-        //customize this to only count players who are alive and can vote.
-        //for testing, counting all players in the room:
-        return PhotonNetwork.PlayerList.Length;
+        int alreadyDeadPLayer = 0;
+        foreach (var photonPlayer in PhotonNetwork.PlayerList)
+        {
+            GameObject playerObj;
+            if (playerObjects.TryGetValue(photonPlayer.ActorNumber, out playerObj))
+            {
+                if (playerObj.GetComponent<PlayerController>().isDead)
+                    alreadyDeadPLayer++;
+            }
+        }
+        Debug.Log("according to his method, num dead is: " + alreadyDeadPLayer);
+
+        return (PhotonNetwork.PlayerList.Length - alreadyDeadPLayer);
     }
 
     private void CountVotesAndExecute()

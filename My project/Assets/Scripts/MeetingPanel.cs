@@ -15,16 +15,19 @@ public class MeetingPanel : MonoBehaviour
 
         foreach (Transform child in buttonContainer)
             Destroy(child.gameObject);
+        bool localIsDead = PlayerController.localPlayer.isDead;
 
         foreach (var player in players)
         {
             GameObject btnObj = Instantiate(playerButtonPrefab, buttonContainer);
             PlayerItem playerItem = btnObj.GetComponent<PlayerItem>();
             playerItem.Setup(player.playerName, player.dogColor, player.isDead, player.playerId);
-            
+            if (player.isDead || localIsDead)
+            {
+                btnObj.GetComponent<Button>().interactable = false;
+                btnObj.GetComponent<Image>().color = new Color(1, 1, 1, 0.6f);
+            }
             btnObj.GetComponent<Button>().onClick.AddListener(() => {
-                if (player.isDead)
-                    btnObj.GetComponent<Button>().interactable = false;
                 onVote?.Invoke(player.playerId); 
 
             });

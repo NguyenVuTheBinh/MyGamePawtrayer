@@ -29,8 +29,8 @@ public class ChatController : MonoBehaviourPun
     private readonly List<ChatMessage> chatMessages = new List<ChatMessage>();
     public IReadOnlyList<ChatMessage> ChatMessages => chatMessages.AsReadOnly();
     public event Action OnChatMessagesUpdated;
-    Color dogColor;
-    bool isDead;
+    Color dogColor = Color.white;
+    bool isDead = false;
 
     private void Awake()
     {
