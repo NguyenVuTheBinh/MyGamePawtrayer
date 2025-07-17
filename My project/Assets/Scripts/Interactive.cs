@@ -19,6 +19,7 @@ public class Interactive : MonoBehaviour
     {
         highlight.SetActive(false);
         Interact.SetActive(false);
+        miniGame.SetActive(false);
     }
     public void PlayMiniGame()
     {

@@ -19,6 +19,7 @@ public class InGameController : MonoBehaviour
     int whichPlayerIsCat;
     //just button
     public GameObject catWinButton;
+    public GameObject dogWinButton;
     //for meeting
     public MeetingPanel meetingPanel;
     public static InGameController Instance { get; private set; }
@@ -42,6 +43,7 @@ public class InGameController : MonoBehaviour
         {
             PickCat();
             catWinButton.SetActive(true);
+            dogWinButton.SetActive(true);
         }
     }
     void PickCat()
@@ -201,6 +203,12 @@ public class InGameController : MonoBehaviour
 
     public void OnClickCatWin()
     {
+        WinnerAnnouncer.WinnerName = "Team Cat win";
+        PhotonNetwork.LoadLevel("5_EndGame");
+    }
+    public void OnClickDogWin()
+    {
+        WinnerAnnouncer.WinnerName = "Team Dog win";
         PhotonNetwork.LoadLevel("5_EndGame");
     }
 

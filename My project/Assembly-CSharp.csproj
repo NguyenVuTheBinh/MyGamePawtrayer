@@ -85,6 +85,7 @@
     <Compile Include="Assets\Scripts\PlayerSetColor.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\IgnoreUiRaycastWhenInactive.cs" />
+    <Compile Include="Assets\Scripts\WinnerAnnouncement.cs" />
     <Compile Include="Assets\Scripts\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\ChatItem.cs" />
     <Compile Include="Assets\Scripts\PhotonScripts\InGameController.cs" />
