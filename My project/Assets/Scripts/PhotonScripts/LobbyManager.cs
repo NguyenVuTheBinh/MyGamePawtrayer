@@ -73,6 +73,6 @@ public class LobbyManager : MonoBehaviourPunCallbacks
     public void OnClickDisconnect()
     {
         PhotonNetwork.Disconnect();
-        SceneManager.LoadScene("1_ConnectToServer");
+        SceneManager.LoadScene("1_StartGameScene");
     }
 }

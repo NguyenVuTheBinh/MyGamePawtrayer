@@ -64,6 +64,7 @@
     <Compile Include="Assets\Scripts\PhotonScripts\SpawnPlayerWaitingRoom.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\AppSettingsExtensions.cs" />
     <Compile Include="Assets\Scripts\PhotonScripts\LobbyManager.cs" />
+    <Compile Include="Assets\Scripts\PhotonScripts\StartGameController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\ChannelSelector.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\FriendItem.cs" />
     <Compile Include="Assets\Scripts\Interactive.cs" />
@@ -80,7 +81,6 @@
     <Compile Include="Assets\Scripts\LayerSorting.cs" />
     <Compile Include="Assets\Scripts\ChatController.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\DemoChat\NamePickGui.cs" />
-    <Compile Include="Assets\Scripts\PhotonScripts\ConnectToServer.cs" />
     <Compile Include="Assets\Scripts\PlayerItem.cs" />
     <Compile Include="Assets\Scripts\PlayerSetColor.cs" />
     <Compile Include="Assets\Photon\PhotonChat\Demos\Common\TextToggleIsOnTransition.cs" />
